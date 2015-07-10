@@ -8,9 +8,9 @@ import io.swagger.client.model.*;
 
 import java.util.*;
 
-import io.swagger.client.model.Error;
 import io.swagger.client.model.Job;
 import java.math.BigDecimal;
+import io.swagger.client.model.Error;
 import io.swagger.client.model.Thread;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
@@ -65,14 +65,14 @@ public class JobsApi {
 
     if (status != null)
       queryParams.put("status", apiClient.parameterToString(status));
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     if (page != null)
       queryParams.put("page", apiClient.parameterToString(page));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -139,10 +139,10 @@ public class JobsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -206,12 +206,12 @@ public class JobsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -275,12 +275,12 @@ public class JobsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -350,12 +350,12 @@ public class JobsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -419,12 +419,12 @@ public class JobsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {

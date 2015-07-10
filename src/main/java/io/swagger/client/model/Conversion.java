@@ -8,9 +8,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @ApiModel(description = "")
 public class Conversion  {
   
+  private String id = null;
   private String target = null;
   private String category = null;
   private Object options = null;
+
+  
+  /**
+   * Identifier for the job conversion.
+   **/
+  @ApiModelProperty(value = "Identifier for the job conversion.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
 
   
   /**
@@ -58,6 +72,7 @@ public class Conversion  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Conversion {\n");
     
+    sb.append("  id: ").append(id).append("\n");
     sb.append("  target: ").append(target).append("\n");
     sb.append("  category: ").append(category).append("\n");
     sb.append("  options: ").append(options).append("\n");

@@ -8,8 +8,8 @@ import io.swagger.client.model.*;
 
 import java.util.*;
 
-import io.swagger.client.model.Error;
 import io.swagger.client.model.InputFile;
+import io.swagger.client.model.Error;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
 import com.sun.jersey.multipart.file.FileDataBodyPart;
@@ -66,12 +66,12 @@ public class InputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -136,12 +136,12 @@ public class InputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -212,12 +212,12 @@ public class InputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -288,12 +288,12 @@ public class InputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {

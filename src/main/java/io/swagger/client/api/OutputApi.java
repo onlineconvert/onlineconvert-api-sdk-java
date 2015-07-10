@@ -72,12 +72,12 @@ public class OutputApi {
       queryParams.put("conversion_id", apiClient.parameterToString(conversionId));
     if (inputId != null)
       queryParams.put("input_id", apiClient.parameterToString(inputId));
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -148,12 +148,12 @@ public class OutputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {
@@ -224,12 +224,12 @@ public class OutputApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (key != null)
-      queryParams.put("key", apiClient.parameterToString(key));
     
 
     if (token != null)
       headerParams.put("token", apiClient.parameterToString(token));
+    if (key != null)
+      headerParams.put("key", apiClient.parameterToString(key));
     
 
     final String[] accepts = {

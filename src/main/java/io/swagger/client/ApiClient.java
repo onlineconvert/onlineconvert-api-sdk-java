@@ -43,7 +43,7 @@ public class ApiClient {
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   private boolean debugging = false;
-  private String basePath = "http://api2.akokine.de";
+  private String basePath = "http://api2.online-convert.com";
 
   private Map<String, Authentication> authentications;
 
