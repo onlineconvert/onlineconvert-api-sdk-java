@@ -1,10 +1,10 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.Status;
-import java.util.*;
-import io.swagger.client.model.Conversion;
 import java.util.Date;
+import io.swagger.client.model.Conversion;
 import io.swagger.client.model.InputFile;
+import java.util.*;
 
 import io.swagger.annotations.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,7 +21,6 @@ public class Job  {
   private TypeEnum type = null;
   private Status status = null;
   private Boolean process = null;
-  private Boolean test = null;
   private List<Conversion> conversion = new ArrayList<Conversion>() ;
   private List<InputFile> input = new ArrayList<InputFile>() ;
   private String callback = null;
@@ -92,19 +91,6 @@ public class Job  {
   }
   public void setProcess(Boolean process) {
     this.process = process;
-  }
-
-  
-  /**
-   * Determine if it is a test job.
-   **/
-  @ApiModelProperty(value = "Determine if it is a test job.")
-  @JsonProperty("test")
-  public Boolean getTest() {
-    return test;
-  }
-  public void setTest(Boolean test) {
-    this.test = test;
   }
 
   
@@ -197,7 +183,6 @@ public class Job  {
     sb.append("  type: ").append(type).append("\n");
     sb.append("  status: ").append(status).append("\n");
     sb.append("  process: ").append(process).append("\n");
-    sb.append("  test: ").append(test).append("\n");
     sb.append("  conversion: ").append(conversion).append("\n");
     sb.append("  input: ").append(input).append("\n");
     sb.append("  callback: ").append(callback).append("\n");

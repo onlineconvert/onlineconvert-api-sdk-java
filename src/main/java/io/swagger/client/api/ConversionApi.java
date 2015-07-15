@@ -43,12 +43,12 @@ public class ConversionApi {
   /**
    * Get list of conversions defined for the current job.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return List<Conversion>
    */
-  public List<Conversion> jobsJobIdConversionsGet (String token, String key, String jobId) throws ApiException {
+  public List<Conversion> jobsJobIdConversionsGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -68,10 +68,10 @@ public class ConversionApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -113,12 +113,12 @@ public class ConversionApi {
    * Adds a new conversion to the given job.
    * 
    * @param body information for the conversion.
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return Conversion
    */
-  public Conversion jobsJobIdConversionsPost (Conversion body, String token, String key, String jobId) throws ApiException {
+  public Conversion jobsJobIdConversionsPost (Conversion body, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = body;
     
     // verify the required parameter 'body' is set
@@ -143,10 +143,10 @@ public class ConversionApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -187,13 +187,13 @@ public class ConversionApi {
   /**
    * Get list of conversions defined for the current job.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @param conversionId Identifier for the job conversion.
    * @return Conversion
    */
-  public Conversion jobsJobIdConversionsConversionIdGet (String token, String key, String jobId, String conversionId) throws ApiException {
+  public Conversion jobsJobIdConversionsConversionIdGet (String xOcToken, String xOcApiKey, String jobId, String conversionId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -219,10 +219,10 @@ public class ConversionApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -263,13 +263,13 @@ public class ConversionApi {
   /**
    * Removes the conversion for a job.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @param conversionId Identifier for the job conversion.
    * @return Conversion
    */
-  public Conversion jobsJobIdConversionsConversionIdDelete (String token, String key, String jobId, String conversionId) throws ApiException {
+  public Conversion jobsJobIdConversionsConversionIdDelete (String xOcToken, String xOcApiKey, String jobId, String conversionId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -295,10 +295,10 @@ public class ConversionApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {

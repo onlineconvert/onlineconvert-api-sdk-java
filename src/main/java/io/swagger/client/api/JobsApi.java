@@ -46,12 +46,12 @@ public class JobsApi {
    * List of jobs active for the current user identified by the key.
    * It will return the list of jobs for the given user. In order to get the jobs a key or token must be provided:\n  - If the user key is provided all jobs for the current will be return.\n  - If one token is provided it will return the job assigned to that token if any.\n  \nThe request is paginated with an amount of 50 elements per page in any case.\n
    * @param status Filter the status of the job.
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param page Pagination for list of elements.
    * @return List<Job>
    */
-  public List<Job> jobsGet (String status, String token, String key, BigDecimal page) throws ApiException {
+  public List<Job> jobsGet (String status, String xOcToken, String xOcApiKey, BigDecimal page) throws ApiException {
     Object postBody = null;
     
 
@@ -69,10 +69,10 @@ public class JobsApi {
       queryParams.put("page", apiClient.parameterToString(page));
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -113,16 +113,16 @@ public class JobsApi {
   /**
    * Creates a new Job with the user key.
    * 
-   * @param key Api key for the user to filter.
+   * @param xOcApiKey Api key for the user to filter.
    * @param body Content of the job.
    * @return Job
    */
-  public Job jobsPost (String key, Job body) throws ApiException {
+  public Job jobsPost (String xOcApiKey, Job body) throws ApiException {
     Object postBody = body;
     
-    // verify the required parameter 'key' is set
-    if (key == null) {
-       throw new ApiException(400, "Missing the required parameter 'key' when calling jobsPost");
+    // verify the required parameter 'xOcApiKey' is set
+    if (xOcApiKey == null) {
+       throw new ApiException(400, "Missing the required parameter 'xOcApiKey' when calling jobsPost");
     }
     
     // verify the required parameter 'body' is set
@@ -141,8 +141,8 @@ public class JobsApi {
 
     
 
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -183,12 +183,12 @@ public class JobsApi {
   /**
    * Get information about a Job
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return Job
    */
-  public Job jobsJobIdGet (String token, String key, String jobId) throws ApiException {
+  public Job jobsJobIdGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -208,10 +208,10 @@ public class JobsApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -252,12 +252,12 @@ public class JobsApi {
   /**
    * Cancels a job created that haven&#39;t been started. (Allow to cancel jobs in process.)
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return Job
    */
-  public Job jobsJobIdDelete (String token, String key, String jobId) throws ApiException {
+  public Job jobsJobIdDelete (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -277,10 +277,10 @@ public class JobsApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -322,12 +322,12 @@ public class JobsApi {
    * Modifies the job identified by the id, allows to start a created job.
    * 
    * @param body Content of the job.
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return Job
    */
-  public Job jobsJobIdPatch (Job body, String token, String key, String jobId) throws ApiException {
+  public Job jobsJobIdPatch (Job body, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = body;
     
     // verify the required parameter 'body' is set
@@ -352,10 +352,10 @@ public class JobsApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -396,12 +396,12 @@ public class JobsApi {
   /**
    * Get list of threads defined for the current job.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return List<Thread>
    */
-  public List<Thread> jobsJobIdThreadsGet (String token, String key, String jobId) throws ApiException {
+  public List<Thread> jobsJobIdThreadsGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -421,10 +421,10 @@ public class JobsApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {

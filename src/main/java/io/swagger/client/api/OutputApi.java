@@ -45,12 +45,12 @@ public class OutputApi {
    * 
    * @param conversionId 
    * @param inputId 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @return List<OutputFile>
    */
-  public List<OutputFile> jobsJobIdOutputGet (String conversionId, String inputId, String token, String key, String jobId) throws ApiException {
+  public List<OutputFile> jobsJobIdOutputGet (String conversionId, String inputId, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -74,10 +74,10 @@ public class OutputApi {
       queryParams.put("input_id", apiClient.parameterToString(inputId));
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -118,13 +118,13 @@ public class OutputApi {
   /**
    * Get information about an output file source.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @param fileId Id of the file to download
    * @return List<OutputFile>
    */
-  public List<OutputFile> jobsJobIdOutputFileIdGet (String token, String key, String jobId, String fileId) throws ApiException {
+  public List<OutputFile> jobsJobIdOutputFileIdGet (String xOcToken, String xOcApiKey, String jobId, String fileId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -150,10 +150,10 @@ public class OutputApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
@@ -194,13 +194,13 @@ public class OutputApi {
   /**
    * Deletes a file from the output.
    * 
-   * @param token Token for authentication.
-   * @param key Api key for the user to filter.
+   * @param xOcToken Token for authentication for the current job
+   * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
    * @param fileId Id of the file to download
    * @return List<OutputFile>
    */
-  public List<OutputFile> jobsJobIdOutputFileIdDelete (String token, String key, String jobId, String fileId) throws ApiException {
+  public List<OutputFile> jobsJobIdOutputFileIdDelete (String xOcToken, String xOcApiKey, String jobId, String fileId) throws ApiException {
     Object postBody = null;
     
     // verify the required parameter 'jobId' is set
@@ -226,10 +226,10 @@ public class OutputApi {
 
     
 
-    if (token != null)
-      headerParams.put("token", apiClient.parameterToString(token));
-    if (key != null)
-      headerParams.put("key", apiClient.parameterToString(key));
+    if (xOcToken != null)
+      headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+    if (xOcApiKey != null)
+      headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
     
 
     final String[] accepts = {
