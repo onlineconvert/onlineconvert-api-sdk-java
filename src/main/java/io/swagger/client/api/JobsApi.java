@@ -56,7 +56,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs".replaceAll("\\{format\\}","json");
+    String path = "jobs".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -132,7 +132,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs".replaceAll("\\{format\\}","json");
+    String path = "jobs".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -198,7 +198,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
@@ -267,7 +267,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
@@ -342,7 +342,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
@@ -411,7 +411,7 @@ public class JobsApi {
     
 
     // create path and map variables
-    String path = "/jobs/{job_id}/threads".replaceAll("\\{format\\}","json")
+    String path = "jobs/{job_id}/threads".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params

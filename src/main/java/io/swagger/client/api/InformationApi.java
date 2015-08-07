@@ -54,7 +54,7 @@ public class InformationApi {
     
 
     // create path and map variables
-    String path = "/conversions".replaceAll("\\{format\\}","json");
+    String path = "conversions".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -116,7 +116,7 @@ public class InformationApi {
     
 
     // create path and map variables
-    String path = "/statuses".replaceAll("\\{format\\}","json");
+    String path = "statuses".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
