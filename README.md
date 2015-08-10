@@ -1,8 +1,8 @@
 # Online Convert API2 Java SDK
 
-This SDK provides a code base to interact with the API2 for [Online Convert](http://www.online-convert.com/). 
+This SDK provides a code base to interact with the API2  version 2 for [Online Convert](http://www.online-convert.com/).
 
-Since the API2 follows the [Swagger specs](http://swagger.io/) this code has been generated using the [swagger code generator](https://github.com/swagger-api/swagger-codegen), base in the curret [API2 schema](https://api2.online-convert.com/schema).
+Since the API version 2 follows the [Swagger specs](http://swagger.io/), this code has been generated using the [swagger code generator](https://github.com/swagger-api/swagger-codegen), base in the curret [API2 schema](https://api2.online-convert.com/schema).
 
 # Requirements
 Before using the SDK a valid account is needed in [Online Convert](http://www.online-convert.com/) in order to get an API key.
