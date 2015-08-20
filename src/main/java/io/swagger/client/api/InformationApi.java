@@ -40,7 +40,7 @@ public class InformationApi {
     this.apiClient = apiClient;
   }
 
-  
+
   /**
    * Get a list of the valid conversions.
    * Gets a list of the valid conversions that can be made with the API. For each conversion is also shown the available options for that specific type of conversion.\n\nThis conversions can be added to a Job through the specific endpoint or in the information given to create the new Job.\n
@@ -51,10 +51,10 @@ public class InformationApi {
    */
   public List<Conversion> conversionsGet (String category, String target, BigDecimal page) throws ApiException {
     Object postBody = null;
-    
+
 
     // create path and map variables
-    String path = "conversions".replaceAll("\\{format\\}","json");
+    String path = "/conversions".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -67,29 +67,29 @@ public class InformationApi {
       queryParams.put("target", apiClient.parameterToString(target));
     if (page != null)
       queryParams.put("page", apiClient.parameterToString(page));
-    
 
-    
+
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -105,7 +105,7 @@ public class InformationApi {
       throw ex;
     }
   }
-  
+
   /**
    * Get a list of the valid statuses.
    * The endpoint provide a list of all available status that the Job may have during the process as a description of the status.
@@ -113,39 +113,39 @@ public class InformationApi {
    */
   public List<Status> statusesGet () throws ApiException {
     Object postBody = null;
-    
+
 
     // create path and map variables
-    String path = "statuses".replaceAll("\\{format\\}","json");
+    String path = "/statuses".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
 
-    
+
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -161,5 +161,5 @@ public class InformationApi {
       throw ex;
     }
   }
-  
+
 }

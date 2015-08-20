@@ -41,7 +41,7 @@ public class JobsApi {
     this.apiClient = apiClient;
   }
 
-  
+
   /**
    * List of jobs active for the current user identified by the key.
    * It will return the list of jobs for the given user. In order to get the jobs a key or token must be provided:\n  - If the user key is provided all jobs for the current will be return.\n  - If one token is provided it will return the job assigned to that token if any.\n  \nThe request is paginated with an amount of 50 elements per page in any case.\n
@@ -53,10 +53,10 @@ public class JobsApi {
    */
   public List<Job> jobsGet (String status, String xOcToken, String xOcApiKey, BigDecimal page) throws ApiException {
     Object postBody = null;
-    
+
 
     // create path and map variables
-    String path = "jobs".replaceAll("\\{format\\}","json");
+    String path = "/jobs".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -67,33 +67,33 @@ public class JobsApi {
       queryParams.put("status", apiClient.parameterToString(status));
     if (page != null)
       queryParams.put("page", apiClient.parameterToString(page));
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -109,61 +109,61 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
   /**
    * Creates a new Job with the user key.
-   * 
+   *
    * @param xOcApiKey Api key for the user to filter.
    * @param body Content of the job.
    * @return Job
    */
   public Job jobsPost (String xOcApiKey, Job body) throws ApiException {
     Object postBody = body;
-    
+
     // verify the required parameter 'xOcApiKey' is set
     if (xOcApiKey == null) {
        throw new ApiException(400, "Missing the required parameter 'xOcApiKey' when calling jobsPost");
     }
-    
+
     // verify the required parameter 'body' is set
     if (body == null) {
        throw new ApiException(400, "Missing the required parameter 'body' when calling jobsPost");
     }
-    
+
 
     // create path and map variables
-    String path = "jobs".replaceAll("\\{format\\}","json");
+    String path = "/jobs".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -179,10 +179,10 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
   /**
    * Get information about a Job
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -190,49 +190,49 @@ public class JobsApi {
    */
   public Job jobsJobIdGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdGet");
     }
-    
+
 
     // create path and map variables
-    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -248,10 +248,10 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
   /**
    * Cancels a job created that haven&#39;t been started. (Allow to cancel jobs in process.)
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -259,49 +259,49 @@ public class JobsApi {
    */
   public Job jobsJobIdDelete (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdDelete");
     }
-    
+
 
     // create path and map variables
-    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -317,10 +317,10 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
   /**
    * Modifies the job identified by the id, allows to start a created job.
-   * 
+   *
    * @param body Content of the job.
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
@@ -329,54 +329,54 @@ public class JobsApi {
    */
   public Job jobsJobIdPatch (Job body, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = body;
-    
+
     // verify the required parameter 'body' is set
     if (body == null) {
        throw new ApiException(400, "Missing the required parameter 'body' when calling jobsJobIdPatch");
     }
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdPatch");
     }
-    
+
 
     // create path and map variables
-    String path = "jobs/{job_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+    String path = "/jobs/{job_id}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -392,10 +392,10 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
   /**
    * Get list of threads defined for the current job.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -403,49 +403,49 @@ public class JobsApi {
    */
   public List<Thread> jobsJobIdThreadsGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdThreadsGet");
     }
-    
+
 
     // create path and map variables
-    String path = "jobs/{job_id}/threads".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+    String path = "/jobs/{job_id}/threads".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -461,5 +461,5 @@ public class JobsApi {
       throw ex;
     }
   }
-  
+
 }

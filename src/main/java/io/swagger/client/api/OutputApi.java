@@ -39,12 +39,12 @@ public class OutputApi {
     this.apiClient = apiClient;
   }
 
-  
+
   /**
    * Get list of converted.
-   * 
-   * @param conversionId 
-   * @param inputId 
+   *
+   * @param conversionId
+   * @param inputId
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -52,16 +52,16 @@ public class OutputApi {
    */
   public List<OutputFile> jobsJobIdOutputGet (String conversionId, String inputId, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdOutputGet");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/output".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -72,33 +72,33 @@ public class OutputApi {
       queryParams.put("conversion_id", apiClient.parameterToString(conversionId));
     if (inputId != null)
       queryParams.put("input_id", apiClient.parameterToString(inputId));
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -114,10 +114,10 @@ public class OutputApi {
       throw ex;
     }
   }
-  
+
   /**
    * Get information about an output file source.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -126,55 +126,55 @@ public class OutputApi {
    */
   public List<OutputFile> jobsJobIdOutputFileIdGet (String xOcToken, String xOcApiKey, String jobId, String fileId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdOutputFileIdGet");
     }
-    
+
     // verify the required parameter 'fileId' is set
     if (fileId == null) {
        throw new ApiException(400, "Missing the required parameter 'fileId' when calling jobsJobIdOutputFileIdGet");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/output/{file_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()))
-      .replaceAll("\\{" + "fileId" + "\\}", apiClient.escapeString(fileId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()))
+      .replaceAll("\\{" + "file_id" + "\\}", apiClient.escapeString(fileId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -190,10 +190,10 @@ public class OutputApi {
       throw ex;
     }
   }
-  
+
   /**
    * Deletes a file from the output.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -202,55 +202,55 @@ public class OutputApi {
    */
   public List<OutputFile> jobsJobIdOutputFileIdDelete (String xOcToken, String xOcApiKey, String jobId, String fileId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdOutputFileIdDelete");
     }
-    
+
     // verify the required parameter 'fileId' is set
     if (fileId == null) {
        throw new ApiException(400, "Missing the required parameter 'fileId' when calling jobsJobIdOutputFileIdDelete");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/output/{file_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()))
-      .replaceAll("\\{" + "fileId" + "\\}", apiClient.escapeString(fileId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()))
+      .replaceAll("\\{" + "file_id" + "\\}", apiClient.escapeString(fileId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -266,5 +266,5 @@ public class OutputApi {
       throw ex;
     }
   }
-  
+
 }
