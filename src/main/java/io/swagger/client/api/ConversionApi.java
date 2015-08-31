@@ -39,10 +39,10 @@ public class ConversionApi {
     this.apiClient = apiClient;
   }
 
-  
+
   /**
    * Get list of conversions defined for the current job.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -50,49 +50,49 @@ public class ConversionApi {
    */
   public List<Conversion> jobsJobIdConversionsGet (String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdConversionsGet");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/conversions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -108,10 +108,10 @@ public class ConversionApi {
       throw ex;
     }
   }
-  
+
   /**
    * Adds a new conversion to the given job.
-   * 
+   *
    * @param body information for the conversion.
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
@@ -120,54 +120,54 @@ public class ConversionApi {
    */
   public Conversion jobsJobIdConversionsPost (Conversion body, String xOcToken, String xOcApiKey, String jobId) throws ApiException {
     Object postBody = body;
-    
+
     // verify the required parameter 'body' is set
     if (body == null) {
        throw new ApiException(400, "Missing the required parameter 'body' when calling jobsJobIdConversionsPost");
     }
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdConversionsPost");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/conversions".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -183,10 +183,10 @@ public class ConversionApi {
       throw ex;
     }
   }
-  
+
   /**
    * Get list of conversions defined for the current job.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -195,55 +195,55 @@ public class ConversionApi {
    */
   public Conversion jobsJobIdConversionsConversionIdGet (String xOcToken, String xOcApiKey, String jobId, String conversionId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdConversionsConversionIdGet");
     }
-    
+
     // verify the required parameter 'conversionId' is set
     if (conversionId == null) {
        throw new ApiException(400, "Missing the required parameter 'conversionId' when calling jobsJobIdConversionsConversionIdGet");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/conversions/{conversion_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()))
-      .replaceAll("\\{" + "conversionId" + "\\}", apiClient.escapeString(conversionId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()))
+      .replaceAll("\\{" + "conversion_id" + "\\}", apiClient.escapeString(conversionId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -259,10 +259,10 @@ public class ConversionApi {
       throw ex;
     }
   }
-  
+
   /**
    * Removes the conversion for a job.
-   * 
+   *
    * @param xOcToken Token for authentication for the current job
    * @param xOcApiKey Api key for the user to filter.
    * @param jobId ID of job that needs to be fetched
@@ -271,55 +271,55 @@ public class ConversionApi {
    */
   public Conversion jobsJobIdConversionsConversionIdDelete (String xOcToken, String xOcApiKey, String jobId, String conversionId) throws ApiException {
     Object postBody = null;
-    
+
     // verify the required parameter 'jobId' is set
     if (jobId == null) {
        throw new ApiException(400, "Missing the required parameter 'jobId' when calling jobsJobIdConversionsConversionIdDelete");
     }
-    
+
     // verify the required parameter 'conversionId' is set
     if (conversionId == null) {
        throw new ApiException(400, "Missing the required parameter 'conversionId' when calling jobsJobIdConversionsConversionIdDelete");
     }
-    
+
 
     // create path and map variables
     String path = "/jobs/{job_id}/conversions/{conversion_id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "jobId" + "\\}", apiClient.escapeString(jobId.toString()))
-      .replaceAll("\\{" + "conversionId" + "\\}", apiClient.escapeString(conversionId.toString()));
+      .replaceAll("\\{" + "job_id" + "\\}", apiClient.escapeString(jobId.toString()))
+      .replaceAll("\\{" + "conversion_id" + "\\}", apiClient.escapeString(conversionId.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    
+
 
     if (xOcToken != null)
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
     if (xOcApiKey != null)
       headerParams.put("X-Oc-Api-Key", apiClient.parameterToString(xOcApiKey));
-    
+
 
     final String[] accepts = {
-      
+
     };
     final String accept = apiClient.selectHeaderAccept(accepts);
 
     final String[] contentTypes = {
-      
+
     };
     final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
     if(contentType.startsWith("multipart/form-data")) {
       boolean hasFields = false;
       FormDataMultiPart mp = new FormDataMultiPart();
-      
+
       if(hasFields)
         postBody = mp;
     }
     else {
-      
+
     }
 
     try {
@@ -335,5 +335,5 @@ public class ConversionApi {
       throw ex;
     }
   }
-  
+
 }
