@@ -8,10 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @ApiModel(description = "")
 public class InputFile  {
-  
-  private String id = null;
+
+  private Object id = null;
+  private Boolean completed = null;
+  private Object metadata = null;
   public enum TypeEnum {
-     upload,  remote,  output, 
+     upload,  remote,  output,
   };
   private TypeEnum type = null;
   private String source = null;
@@ -20,20 +22,46 @@ public class InputFile  {
   private Date createdAt = null;
   private Date modifiedAt = null;
 
-  
+
   /**
    * Unique identifier for the file.
+     * @return job,input
    **/
   @ApiModelProperty(value = "Unique identifier for the file.")
   @JsonProperty("id")
-  public String getId() {
+  public Object getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Object id) {
     this.id = id;
   }
 
-  
+  /**
+   * Process completed or not.
+   * @return boolean
+   **/
+  @ApiModelProperty(value = "Process completed or not.")
+  @JsonProperty("completed")
+  public Boolean getCompleted() {
+    return completed;
+  }
+  public void setCompleted(Boolean completed) {
+    this.completed = completed;
+  }
+
+  /**
+   * Response metadata.
+   * @return image_width,image_height
+   **/
+  @ApiModelProperty(value = "Response metadata.")
+  @JsonProperty("metadata")
+  public Object geMetadata() {
+    return metadata;
+  }
+  public void setMetadata(Object metadata) {
+    this.metadata = metadata;
+  }
+
   /**
    * How the file has been generated.
    **/
@@ -46,7 +74,7 @@ public class InputFile  {
     this.type = type;
   }
 
-  
+
   /**
    * The source of the file to be used that can be either, an external url. An identifier for an uploaded file to the server or an identifier for another job.
    **/
@@ -59,7 +87,7 @@ public class InputFile  {
     this.source = source;
   }
 
-  
+
   /**
    * Filename of the file.
    **/
@@ -72,7 +100,7 @@ public class InputFile  {
     this.filename = filename;
   }
 
-  
+
   /**
    * Size of the file in bytes.
    **/
@@ -85,7 +113,7 @@ public class InputFile  {
     this.size = size;
   }
 
-  
+
   /**
    * Date and time when the job was created.
    **/
@@ -98,7 +126,7 @@ public class InputFile  {
     this.createdAt = createdAt;
   }
 
-  
+
   /**
    * Date and time when the job was last modified.
    **/
@@ -111,13 +139,15 @@ public class InputFile  {
     this.modifiedAt = modifiedAt;
   }
 
-  
+
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class InputFile {\n");
-    
+
+    sb.append("  completed: ").append(completed).append("\n");
+    sb.append("  metadata: ").append(metadata).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("  source: ").append(source).append("\n");

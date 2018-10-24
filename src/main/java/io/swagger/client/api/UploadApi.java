@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 import java.util.*;
 import java.io.File;
 
+import java.util.UUID;
+
 import io.swagger.client.model.*;
 
 public class UploadApi {
@@ -76,8 +78,12 @@ public class UploadApi {
     FileDataBodyPart fileDataBodyPart=new FileDataBodyPart("file", fileToUpload, MediaType.APPLICATION_OCTET_STREAM_TYPE);
     body.bodyPart(fileDataBodyPart);
 
-    if (xOcToken != null)
+    UUID uuid = UUID.randomUUID();
+
+    if (xOcToken != null){
       headerParams.put("X-Oc-Token", apiClient.parameterToString(xOcToken));
+      headerParams.put("X-Oc-Upload-Uuid", apiClient.parameterToString(uuid));  
+    }
 
     final String[] accepts = {
     };
