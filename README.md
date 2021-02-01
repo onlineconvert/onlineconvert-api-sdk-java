@@ -1,3 +1,5 @@
+# This SDK is deprecated and archived!
+
 # Online Convert API version 2 Java SDK
 This SDK provides a code base to interact with the API version 2 for [Online-Convert.com](http://www.online-convert.com/).
 
